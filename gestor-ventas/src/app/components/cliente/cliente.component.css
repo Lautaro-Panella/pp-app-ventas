@@ -1,0 +1,17 @@
+body{
+    background-image: url('src/assets/fondo-acuarela.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 150vh;
+    opacity: 0.95;
+}
+
+.contenedor-1{
+    display: flex;
+    align-items: center;
+}
+
+.margen-izq{
+    margin-left: 15px;
+}

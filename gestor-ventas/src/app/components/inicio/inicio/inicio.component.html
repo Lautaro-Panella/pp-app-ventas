@@ -1,0 +1,78 @@
+<body>
+    <br />
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                        <a routerLink="/clientes">Clientes</a>
+                    </button>
+                </h2>
+                <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
+                    data-bs-parent="#accordionExample" style="">
+                    <div class="accordion-body">
+                        En esta sección vas a poder visualizar en una lista todos los Clientes, crear nuevos, editarlos y desactivarlos.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        <a routerLink="/categorias">Categorías</a>
+                    </button>
+                </h2>
+                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                    data-bs-parent="#accordionExample" style="">
+                    <div class="accordion-body">
+                        En esta sección vas a poder visualizar en una lista todas las Categorías, crear nuevas, editarlas y desactivarlas.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                        <a routerLink="/productos">Productos</a>
+                    </button>
+                </h2>
+                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                    data-bs-parent="#accordionExample" style="">
+                    <div class="accordion-body">
+                        En esta sección vas a poder visualizar en una lista/tabla todos los Productos, crear nuevos, editarlos (agregar o quitar unidades) y desactivarlos.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        <a routerLink="/facturas">Ventas/Facturas</a>
+                    </button>
+                </h2>
+                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                    data-bs-parent="#accordionExample" style="">
+                    <div class="accordion-body">
+                        En esta sección vas a poder visualizar en una lista todas las Ventas/Facturas con su respectivo detalle, la impresión en PDF, y el envío de estas por E-Mail.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        <a routerLink="/reportes">Reportes/Métricas</a>
+                    </button>
+                </h2>
+                <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                    data-bs-parent="#accordionExample" style="">
+                    <div class="accordion-body">
+                        En esta sección vas a poder visualizar métricas del negocio, y generar reportes de “productos más vendidos y menos vendidos”, “ganancias en un período de tiempo”, “stock”, “histórico de ventas”, en formato PDF y Excel.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+</body>
