@@ -24,6 +24,12 @@ public class CategoriaService {
 
     /**
      *
+     * @return
+     */
+    public List<Categoria> getCategoriasActivas() { return categoriaRepository.findByFechaBajaNull(); }
+
+    /**
+     *
      * @param categoriaId
      * @return
      */
@@ -33,26 +39,23 @@ public class CategoriaService {
 
     /**
      *
+     * @param texto
+     * @return
+     */
+    public List<Categoria> getCategoriasByDescripcion(String texto) {
+        if(texto != null) {
+            texto = "%" + texto.toLowerCase() + "%";
+        }
+        return categoriaRepository.findCategoriasByDescripcion(texto);
+    }
+
+    /**
+     *
      * @param categoria
      * @return
      */
     public Categoria saveOrUpdateCategoria(Categoria categoria) {
         return categoriaRepository.save(categoria);
-    }
-
-    /**
-     *
-     * @param categoriaId
-     * @return
-     */
-    public boolean deleteCategoria(Long categoriaId) {
-        try {
-            categoriaRepository.deleteById(categoriaId);
-            return true;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
     }
 
 }

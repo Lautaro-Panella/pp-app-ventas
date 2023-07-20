@@ -46,6 +46,16 @@ public class ClienteController {
 
     /**
      *
+     * @param texto
+     * @return
+     */
+    @GetMapping("/customFilter")
+    public List<Cliente> getClientesByNombreOrApellidoOrDni(@RequestParam("texto") String texto) {
+        return clienteService.getClientesByNombreOrApellidoOrDni(texto);
+    }
+
+    /**
+     *
      * @param cliente
      * @return
      */

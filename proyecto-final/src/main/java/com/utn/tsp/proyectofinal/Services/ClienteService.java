@@ -41,26 +41,23 @@ public class ClienteService {
 
     /**
      *
+     * @param texto
+     * @return
+     */
+    public List<Cliente> getClientesByNombreOrApellidoOrDni(String texto) {
+        if(texto != null) {
+            texto = "%" + texto.toLowerCase() + "%";
+        }
+        return clienteRepository.findClientesByNombreOrApellidoOrDni(texto);
+    }
+
+    /**
+     *
      * @param cliente
      * @return
      */
     public Cliente saveOrUpdateCliente(Cliente cliente) {
         return clienteRepository.save(cliente);
-    }
-
-    /**
-     *
-     * @param clienteId
-     * @return
-     */
-    public boolean deleteCliente(Long clienteId) {
-        try {
-            clienteRepository.deleteById(clienteId);
-            return true;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
     }
 
 }

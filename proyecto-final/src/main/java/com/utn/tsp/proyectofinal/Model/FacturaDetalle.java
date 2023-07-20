@@ -24,6 +24,6 @@ public class FacturaDetalle implements Serializable {
     @JoinColumn(name = "productoId")
     private Producto producto;
     private Double precioUnitario;
-    private int cantidad;
+    private Integer cantidad;
 
 }

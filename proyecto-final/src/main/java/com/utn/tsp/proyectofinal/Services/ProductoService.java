@@ -24,6 +24,12 @@ public class ProductoService {
 
     /**
      *
+     * @return
+     */
+    public List<Producto> getProductosActivos() { return productoRepository.findByFechaBajaNull(); }
+
+    /**
+     *
      * @param productoId
      * @return
      */
@@ -33,26 +39,23 @@ public class ProductoService {
 
     /**
      *
+     * @param texto
+     * @return
+     */
+    public List<Producto> getProductosByDescripcion(String texto) {
+        if(texto != null) {
+            texto = "%" + texto.toLowerCase() + "%";
+        }
+        return productoRepository.findProductosByDescripcion(texto);
+    }
+
+    /**
+     *
      * @param producto
      * @return
      */
     public Producto saveOrUpdateProducto(Producto producto) {
         return productoRepository.save(producto);
-    }
-
-    /**
-     *
-     * @param productoId
-     * @return
-     */
-    public boolean deleteProducto(Long productoId) {
-        try {
-            productoRepository.deleteById(productoId);
-            return true;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
     }
 
 }

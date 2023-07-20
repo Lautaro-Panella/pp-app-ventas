@@ -33,26 +33,20 @@ public class FacturaDetalleService {
 
     /**
      *
+     * @param facturaId
+     * @return
+     */
+    public List<FacturaDetalle> getFacturaDetallesByFacturaId(Long facturaId) {
+        return facturaDetalleRepository.findFacturaDetalleByFactura_FacturaId(facturaId);
+    }
+
+    /**
+     *
      * @param facturaDetalle
      * @return
      */
     public FacturaDetalle saveOrUpdateFacturaDetalle(FacturaDetalle facturaDetalle) {
         return facturaDetalleRepository.save(facturaDetalle);
-    }
-
-    /**
-     *
-     * @param facturaDetalleId
-     * @return
-     */
-    public boolean deleteFacturaDetalle(Long facturaDetalleId) {
-        try {
-            facturaDetalleRepository.deleteById(facturaDetalleId);
-            return true;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
     }
 
 }

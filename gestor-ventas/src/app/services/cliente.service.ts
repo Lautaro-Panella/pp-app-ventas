@@ -33,6 +33,11 @@ export class ClienteService {
     return this.http.get<Cliente>(this.clienteUrl + '/' + id, { headers: this.header });
   }
 
+  // Obtener clientes por nobmre, apellido o dni
+  getClientesByNombreOrApellidoOrDni(texto: string): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(this.clienteUrl + '/customFilter?texto=' + texto, { headers: this.header });
+  }
+
   // Guardar-actualizar cliente
   saveCliente(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(this.clienteUrl, cliente, { headers: this.header });

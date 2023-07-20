@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name = "CATEGORIA")
@@ -18,5 +19,6 @@ public class Categoria implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long categoriaId;
     private String descripcion;
+    private Date fechaBaja;
 
 }

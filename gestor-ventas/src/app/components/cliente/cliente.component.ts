@@ -56,7 +56,13 @@ export class ClienteComponent implements OnInit {
     }
   }
 
-  clearForm(){
+  getClientesByNombreOrApellidoOrDni(texto: string) {
+    this.clienteService.getClientesByNombreOrApellidoOrDni(texto).subscribe(data => {
+      this.clientes = data;
+    });
+  }
+
+  clearForm() {
     this.clienteForm.setValue({
       'clienteId': '',
       'nombre': '', 

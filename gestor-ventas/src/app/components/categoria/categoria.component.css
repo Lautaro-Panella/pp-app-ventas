@@ -6,3 +6,24 @@ body{
     height: 150vh;
     opacity: 0.95;
 }
+
+.contenedor-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.customFilter{
+    border: solid 1px black;
+    width: 310px;
+}
+
+.my-custom-scrollbar{
+    position: relative;
+    height: 500px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y{
+    display: block;
+}

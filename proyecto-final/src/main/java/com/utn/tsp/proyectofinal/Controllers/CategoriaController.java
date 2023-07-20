@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "api/categoria")
+@CrossOrigin("http://localhost:4200")
 public class CategoriaController {
 
     @Autowired
@@ -26,6 +27,15 @@ public class CategoriaController {
 
     /**
      *
+     * @return
+     */
+    @GetMapping("/activos")
+    public List<Categoria> getCategoriasActivas() {
+        return categoriaService.getCategoriasActivas();
+    }
+
+    /**
+     *
      * @param categoriaId
      * @return
      */
@@ -36,28 +46,22 @@ public class CategoriaController {
 
     /**
      *
+     * @param texto
+     * @return
+     */
+    @GetMapping("/customFilter")
+    public List<Categoria> getCategoriasByDescripcion(@RequestParam("texto") String texto) {
+        return categoriaService.getCategoriasByDescripcion(texto);
+    }
+
+    /**
+     *
      * @param categoria
      * @return
      */
     @PostMapping
     public Categoria saveOrUpdateCategoria(@RequestBody Categoria categoria) {
         return categoriaService.saveOrUpdateCategoria(categoria);
-    }
-
-    /**
-     *
-     * @param categoriaId
-     * @return
-     */
-    @DeleteMapping("/{categoriaId}")
-    public String deleteCliente(@PathVariable("categoriaId") Long categoriaId) {
-        boolean eliminado = categoriaService.deleteCategoria(categoriaId);
-        if (eliminado) {
-            return "Se eliminó la Categoría con id: " + categoriaId;
-        }
-        else {
-            return "No se encontró la Categoría con id: " + categoriaId;
-        }
     }
 
 }

@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'gestor-ventas';
+  title = 'MALVA';
+
+  constructor() { 
+    localStorage.setItem('isLogged', 'false');
+  }
+
 }

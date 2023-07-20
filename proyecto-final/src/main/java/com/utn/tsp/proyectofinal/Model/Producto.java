@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name = "PRODUCTO")
@@ -18,10 +19,12 @@ public class Producto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productoId;
     private String descripcion;
+    private Integer talle;
     private Double precioUnitario;
     private Long existencias;
     @ManyToOne
     @JoinColumn(name = "categoriaId")
     private Categoria categoria;
+    private Date fechaBaja;
 
 }

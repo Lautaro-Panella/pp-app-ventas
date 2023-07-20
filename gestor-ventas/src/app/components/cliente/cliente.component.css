@@ -10,8 +10,20 @@ body{
 .contenedor-1{
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-.margen-izq{
-    margin-left: 15px;
+.customFilter{
+    border: solid 1px black;
+    width: 310px;
+}
+
+.my-custom-scrollbar{
+    position: relative;
+    height: 500px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y{
+    display: block;
 }
